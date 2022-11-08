@@ -5,10 +5,14 @@ export default class Slider {
         prev = null,
         activeClass = '',
         animate,
-        autoplay }  = {}) {
+        autoplay,
+        nextPage2 = null,
+        prevPage2 = null }  = {}) {
 
         this.container = document.querySelector(container);
-        this.slides = this.container.children;
+        try{
+            this.slides = this.container.children;
+        }catch(e){}
         this.btns = document.querySelectorAll(btns);
         this.prev = document.querySelector(prev);
         this.next = document.querySelector(next);
@@ -16,6 +20,12 @@ export default class Slider {
         this.animate = animate;
         this.autoplay = autoplay;
         this.slideIndex = 1;
+        this.nextPage2 = document.querySelectorAll(nextPage2);
+        this.prevPage2 = document.querySelectorAll(prevPage2);
+       
+
+       
+
        
 
     }
